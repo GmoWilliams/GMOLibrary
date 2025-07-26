@@ -6,7 +6,7 @@ const BookPage = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch('http://openlibrary.org/subjects/love.json?limit=30')
+        fetch('https://openlibrary.org/subjects/love.json?limit=30')
         .then(response => response.json())
         .then(json => {
             const result = json.works || []
