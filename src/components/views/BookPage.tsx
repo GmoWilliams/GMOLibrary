@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../Components.css'
+import BooksGrid from '../organisms/BooksGrid'
 
 const BookPage = () => {
 
@@ -11,8 +12,6 @@ const BookPage = () => {
         .then(json => {
             const result = json.works || []
             const books = result.map( (item: { title: string; }) => item.title)
-            console.log(`These are the books: ${JSON.stringify(books, null, 2)}`)
-
             setData(books)
         })
         .catch(error => console.error(`There was an error: ${error}`))
@@ -24,13 +23,7 @@ const BookPage = () => {
 
     return (
         <div className="page">
-            <button
-                className='button'
-                style={{backgroundColor: 'white'}}
-                onClick={handleClick}
-            >
-                Click here
-            </button>
+            <BooksGrid />
         </div>
     )
 }
