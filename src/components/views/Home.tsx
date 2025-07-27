@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../logo.svg'
+import Book from '../../book-image.png'
 import '../Components.css'
 
 const Home = () => {
@@ -7,17 +7,17 @@ const Home = () => {
     return (
         <div className="page">
             <header >
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={Book} alt="logo" />
                 <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
+                    This is a small project of mine, aiming to create a fun library experience based on the OpenLibrary API.
                 </p>
                 <a
                     className="App-link"
-                    href="https://reactjs.org"
+                    href="https://openlibrary.org/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    Learn React
+                    If you wish you can visit OpenLibrary here
                 </a>
             </header>
         </div>
