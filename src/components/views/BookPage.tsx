@@ -25,7 +25,7 @@ const BookPage = () => {
 
     return (
         <div className="page">
-            <h1>{`Book about: ${selectedGenre.text}`}</h1>
+            <h1>{`Books about: ${selectedGenre.text}`}</h1>
             <GenreOptions onSelectGenre={setSelectedGenre} />
             <BooksGrid data={data}/>
         </div>
