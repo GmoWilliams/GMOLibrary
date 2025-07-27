@@ -3,7 +3,7 @@ import './Atoms.css'
 
 interface Props {
     id: string,
-    author: Object,
+    author: string,
     title: string,
     year: string,
     format: string,
@@ -26,18 +26,23 @@ const BookCard = ({
     return (
         <div className='App'>
             <div className='App-header'>
-                <img 
-                    src={string} 
-                    alt='My Book'
-                    style={{
-                        height: 'auto', 
-                        width: '200px',
-                        objectFit: 'cover',
-                        objectPosition: 'center',
-                    }}
-                />
-                <h4>{title}</h4>
-                <p>{year}</p>
+                <div className='bookCard'>
+                    <img 
+                        src={string} 
+                        alt='My Book'
+                        style={{
+                            height: 'auto', 
+                            width: '200px',
+                            borderRadius: '10px',
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
+                    />
+                    <h4>{title}</h4>
+                    <p>{author}</p>
+                    <p>{year}</p>
+                </div>
+                
             </div>
         </div>
     )
