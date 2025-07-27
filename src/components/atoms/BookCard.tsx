@@ -31,13 +31,13 @@ const BookCard = ({
                     alt='My Book'
                     style={{
                         height: 'auto', 
-                        width: '300px',
+                        width: '200px',
                         objectFit: 'cover',
                         objectPosition: 'center',
                     }}
                 />
-                <h2>{title}</h2>
-                <h3>{year}</h3>
+                <h4>{title}</h4>
+                <p>{year}</p>
             </div>
         </div>
     )

@@ -43,7 +43,16 @@ const BooksGrid = () => {
     console.log(`This is books: ${JSON.stringify(books, null, 2)}`)
 
     return (
-        <div>
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'row',
+                flexWrap: 'wrap',
+                columnGap: '5vw',
+                margin: '30px',
+                justifyContent: 'center',
+            }}
+        >
             {books.map((book: Book) => (
                 <BookCard
                     id={book.id}
