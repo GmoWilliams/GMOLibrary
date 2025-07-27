@@ -28,6 +28,7 @@
     color: white;
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.5rem;
     transition: color 0.2s;
 }
   
@@ -47,4 +48,18 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: white;
+}
+
+.home-button {
+    font-family: 'Garamond', 'Georgia', 'Times New Roman', 'Courier New';
+    background-color: #282c34;
+    color: #fff;
+    padding: 0.5rem; 
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2rem;
+    border-radius: 2rem;
+    border-style: 'solid';
+    border-width: 0.4rem;
+    border-color: aqua;
 }
