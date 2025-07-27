@@ -7,7 +7,13 @@ const Home = () => {
     return (
         <div className="page">
             <header >
-                <img src={Book} alt="logo" />
+                <div className='home-image'>
+                    <img src={Book} alt="icon" style={{
+                        height: 'auto',
+                        width: '20vw',
+                        margin: '2rem',
+                    }}/>
+                </div>
                 <p>
                     This is a small project of mine, aiming to create a fun library experience based on the OpenLibrary API.
                 </p>
