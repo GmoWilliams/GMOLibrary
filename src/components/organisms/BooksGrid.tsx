@@ -13,30 +13,15 @@ interface Book {
     subject: any,
 }
 
-const BooksGrid = () => {
-
-    const [data, setData] = useState([])
-
-    useEffect(() => {
-        fetch('https://openlibrary.org/subjects/love.json?limit=30')
-        .then(response => response.json())
-        .then(json => {
-            const result = json.works || []
-            setData(result)
-        })
-        .catch(error => console.error(`There was an error: ${error}`))
-    }, [])
-
-    const sample = data.slice(0, 20)
-
-    const books = sample.map((item: any) => {
+const BooksGrid = ({data}: any) => {
+    const books = data.map((item: any) => {
         return {
         id: item.key || 'NA',
         author: {
             name: item?.authors[0]?.name || 'NA',
             key: item?.authors[0]?.key || 'NA',
         },
-        coverId: item.cover_edition_key || 'NA',
+        coverId: item.cover_id || 'NA',
         title: item.title || 'NA',
         year: item.first_publish_year || 'NA',
         subject: item.subject || 'NA',
@@ -61,7 +46,7 @@ const BooksGrid = () => {
                     year={book.year}
                     subject={book.subject}
                     // Open Library ID
-                    format={'olid'}
+                    format={'id'}
                     // from "cover_edition_key"
                     bookId={book.coverId}
                     size={'L'}

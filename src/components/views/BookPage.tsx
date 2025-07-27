@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import '../Components.css'
 import BooksGrid from '../organisms/BooksGrid'
+import GenreOptions from '../molecules/GenreOptions'
 
 const BookPage = () => {
+
+    const [selectedGenre, setSelectedGenre] = useState({
+        value: 'love',
+        text: 'Love',
+    })
 
     const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch('https://openlibrary.org/subjects/love.json?limit=30')
+        const query = `https://openlibrary.org/subjects/${selectedGenre.value}.json?limit=20`
+        fetch(query)
         .then(response => response.json())
         .then(json => {
             const result = json.works || []
-            const books = result.map( (item: { title: string; }) => item.title)
-            setData(books)
+            setData(result)
         })
         .catch(error => console.error(`There was an error: ${error}`))
-    }, [])
-
-    const handleClick = () => {
-        alert(`These are the books I found: ${JSON.stringify(data, null, 2)}`)
-    }
+    }, [selectedGenre])
 
     return (
         <div className="page">
-            <BooksGrid />
+            <h1>{`Book about: ${selectedGenre.text}`}</h1>
+            <GenreOptions onSelectGenre={setSelectedGenre} />
+            <BooksGrid data={data}/>
         </div>
     )
 }
