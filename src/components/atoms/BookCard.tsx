@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Atoms.css'
 
 interface Props {
@@ -6,6 +7,7 @@ interface Props {
     author: string,
     title: string,
     year: string,
+    subject: any,
     format: string,
     bookId: string,
     size: string,
@@ -16,19 +18,34 @@ const BookCard = ({
     author,
     title,
     year,
+    subject,
     format,
     bookId,
     size,
 }: Props) => {
 
-    const string = `https://covers.openlibrary.org/b/${format}/${bookId}-${size}.jpg`
+    const navigate = useNavigate()
+    const url = `https://covers.openlibrary.org/b/${format}/${bookId}-${size}.jpg`
+
+    const handleClick = () => {
+        navigate('/details', {
+            state: {
+                id,
+                cover: url,
+                title,
+                author,
+                year,
+                subject,
+            }
+        })
+    }
 
     return (
         <div className='App'>
             <div className='App-header'>
-                <div className='bookCard'>
+                <div className='bookCard' onClick={handleClick}>
                     <img 
-                        src={string} 
+                        src={url} 
                         alt='My Book'
                         style={{
                             height: 'auto', 

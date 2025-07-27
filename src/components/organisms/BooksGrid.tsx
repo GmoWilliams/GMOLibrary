@@ -10,6 +10,7 @@ interface Book {
     coverId: string,
     title: string,
     year: string,
+    subject: any,
 }
 
 const BooksGrid = () => {
@@ -38,6 +39,7 @@ const BooksGrid = () => {
         coverId: item.cover_edition_key || 'NA',
         title: item.title || 'NA',
         year: item.first_publish_year || 'NA',
+        subject: item.subject || 'NA',
     }})
 
     return (
@@ -56,7 +58,8 @@ const BooksGrid = () => {
                     id={book.id}
                     author={book.author.name}
                     title={book.title}
-                    year={book.year} 
+                    year={book.year}
+                    subject={book.subject}
                     // Open Library ID
                     format={'olid'}
                     // from "cover_edition_key"
