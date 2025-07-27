@@ -26,7 +26,7 @@ const BooksGrid = () => {
         .catch(error => console.error(`There was an error: ${error}`))
     }, [])
 
-    const sample = data.slice(0, 10)
+    const sample = data.slice(0, 20)
 
     const books = sample.map((item: any) => {
         return {
@@ -39,8 +39,6 @@ const BooksGrid = () => {
         title: item.title || 'NA',
         year: item.first_publish_year || 'NA',
     }})
-
-    console.log(`This is books: ${JSON.stringify(books, null, 2)}`)
 
     return (
         <div
@@ -56,7 +54,7 @@ const BooksGrid = () => {
             {books.map((book: Book) => (
                 <BookCard
                     id={book.id}
-                    author={book.author}
+                    author={book.author.name}
                     title={book.title}
                     year={book.year} 
                     // Open Library ID
