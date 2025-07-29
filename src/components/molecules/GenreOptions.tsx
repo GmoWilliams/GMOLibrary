@@ -3,7 +3,7 @@ import {genreList} from '../atoms/genresList'
 
 const GenreOptions = ({onSelectGenre}: any) => {
   return (
-    <div className="genre-options-scroll-wrapper">
+    <div >
       <ul className="genre-options-list">
         {genreList.map(item => (
           <li key={item.value}>
