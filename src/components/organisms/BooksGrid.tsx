@@ -30,11 +30,11 @@ const BooksGrid = ({data}: any) => {
     return (
         <div
             style={{
+                marginTop: '2rem',
                 display: 'flex',
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 columnGap: '5vw',
-                margin: '30px',
                 justifyContent: 'center',
             }}
         >
