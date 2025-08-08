@@ -49,16 +49,10 @@ const BookDetails = () => {
                 <img 
                     src={book.cover} 
                     alt='My Book'
-                    style={{
-                        height: 'auto', 
-                        width: '300px',
-                        borderRadius: '10px',
-                        objectFit: 'cover',
-                        objectPosition: 'center',
-                    }}
+                    className='book-details-img'
                 />
 
-                <div className='book-info'>
+                <div className='book-details-info'>
                     <h1>{'Title: ' + book.title}</h1>
                     <h2>{'Author: ' + book.author}</h2>
                     <h2>{'Publication Year: ' + book.year}</h2>
