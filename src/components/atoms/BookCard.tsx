@@ -43,25 +43,11 @@ const BookCard = ({
     return (
         <div className='bookCard' 
             onClick={handleClick}
-            style={{
-                width: '15rem',
-                marginBottom: '2rem',
-            }}
         >
             <img 
                 src={url} 
                 alt='My Book'
-                style={{
-                    backgroundColor: 'white',
-                    borderWidth: '0.2rem',
-                    borderStyle: 'solid',
-                    borderColor: 'white',
-                    height: 'auto', 
-                    width: '200px',
-                    borderRadius: '10px',
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                }}
+                className='book-image'
             />
             <div>
                 <h4 className='clamp-text'>{title}</h4>

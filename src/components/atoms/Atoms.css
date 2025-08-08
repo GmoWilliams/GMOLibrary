@@ -4,10 +4,23 @@ h1, h2, h3, h4, h5, h6, p {
 
 .bookCard {
   transition: all 0.3s ease;
+  margin-bottom: 2rem;
 }
 
 .bookCard:hover {
   transform: scale(1.05);
+}
+
+.book-image {
+  background-color: white;
+  border-width: 0.2rem;
+  border-style: solid;
+  border-color: white;
+  height: auto;
+  width: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .clamp-text {
@@ -16,4 +29,10 @@ h1, h2, h3, h4, h5, h6, p {
   line-clamp: 3;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .book-image {
+        width: 130px;
+    }
 }
