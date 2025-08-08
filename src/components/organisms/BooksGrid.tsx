@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import BookCard from "../atoms/BookCard"
+import './Organisms.css'
 
 interface Book {
     id: string,
@@ -29,14 +30,7 @@ const BooksGrid = ({data}: any) => {
 
     return (
         <div
-            style={{
-                marginTop: '2rem',
-                display: 'flex',
-                flexDirection: 'row',
-                flexWrap: 'wrap',
-                columnGap: '5vw',
-                justifyContent: 'center',
-            }}
+            className='books-grid'
         >
             {books.map((book: Book) => (
                 <BookCard
