@@ -4,14 +4,18 @@ import {
     Home,
     BookPage
 } from './components/views'
-import BookDetails from './components/organisms/BookDetails';
+import BookDetails from './components/organisms/BookDetails'
+import ScrollToTop from './components/atoms/ScrollToTop';
 
 export default function AppRouter() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/books" element={<BookPage />} />
-            <Route path="/details" element={<BookDetails />} />
-        </Routes>
+        <>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/books" element={<BookPage />} />
+                <Route path="/details" element={<BookDetails />} />
+            </Routes>
+        </>
     )
 }
